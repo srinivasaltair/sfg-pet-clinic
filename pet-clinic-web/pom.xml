@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.springframwork</groupId>
     <artifactId>pet-clinic-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>pet-clinic-web</name>
     <description>pet-clinic-web</description>
     <url />
@@ -22,7 +22,7 @@
     <scm>
         <connection />
         <developerConnection />
-        <tag>sfg-pet-clinic-0.0.4</tag>
+        <tag>sfg-pet-clinic-0.0.1</tag>
         <url />
     </scm>
     <properties>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.springframwork</groupId>
             <artifactId>pet-clinic-data</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
