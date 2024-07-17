@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.springframwork</groupId>
     <artifactId>pet-clinic-web</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1</version>
     <name>pet-clinic-web</name>
     <description>pet-clinic-web</description>
     <url />
