@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.springframwork</groupId>
     <artifactId>pet-clinic-data</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>pet-clinic-data</name>
     <description>pet-clinic-data</description>
     <url />
@@ -20,10 +20,10 @@
         <developer />
     </developers>
     <scm>
-        <connection />
-        <developerConnection />
+        <connection></connection>
+        <developerConnection></developerConnection>
         <tag>sfg-pet-clinic-0.0.1</tag>
-        <url />
+        <url></url>
     </scm>
     <properties>
         <java.version>17</java.version>
