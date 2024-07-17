@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.springframwork</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<modules>
 		<module>pet-clinic-web</module>
