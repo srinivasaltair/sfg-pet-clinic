@@ -3,19 +3,19 @@ package com.springframwork.petclinicweb.bootstrap;
 import com.springframwork.petclinicdata.model.Owner;
 import com.springframwork.petclinicdata.model.Vet;
 import com.springframwork.petclinicdata.services.OwnerService;
-import com.springframwork.petclinicdata.services.PetService;
 import com.springframwork.petclinicdata.services.VetService;
-import com.springframwork.petclinicdata.services.map.OwnerServiceMap;
-import com.springframwork.petclinicdata.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataLoader implements CommandLineRunner {
+
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     public void run(String... args) throws Exception {
