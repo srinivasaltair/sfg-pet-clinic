@@ -1,6 +1,7 @@
 package com.springframwork.petclinicweb.bootstrap;
 
 import com.springframwork.petclinicdata.model.Owner;
+import com.springframwork.petclinicdata.model.Pet;
 import com.springframwork.petclinicdata.model.PetType;
 import com.springframwork.petclinicdata.model.Vet;
 import com.springframwork.petclinicdata.services.OwnerService;
@@ -8,6 +9,8 @@ import com.springframwork.petclinicdata.services.PetTypeService;
 import com.springframwork.petclinicdata.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -35,12 +38,28 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("John");
         owner1.setLastName("Doe");
+
+        Pet johnPet = new Pet();
+        johnPet.setOwner(owner1);
+        johnPet.setPetType(savedDogType);
+        johnPet.setBirthDate(LocalDate.now());
+        johnPet.setName("Summer");
+        owner1.getPets().add(johnPet);
+
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Jane");
         owner2.setLastName("Doe");
         ownerService.save(owner2);
+
+        Pet janePet = new Pet();
+        janePet.setOwner(owner2);
+        janePet.setPetType(savedCatType);
+        janePet.setBirthDate(LocalDate.now());
+        janePet.setName("June");
+        owner2.getPets().add(janePet);
+
         System.out.println("Loaded Owners...");
 
         Vet vet1 = new Vet();
