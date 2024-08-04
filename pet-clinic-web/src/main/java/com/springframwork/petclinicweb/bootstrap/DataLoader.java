@@ -1,10 +1,7 @@
 package com.springframwork.petclinicweb.bootstrap;
 
 import com.springframwork.petclinicdata.model.*;
-import com.springframwork.petclinicdata.services.OwnerService;
-import com.springframwork.petclinicdata.services.PetTypeService;
-import com.springframwork.petclinicdata.services.SpecialityService;
-import com.springframwork.petclinicdata.services.VetService;
+import com.springframwork.petclinicdata.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     public void run(String... args) throws Exception {
@@ -65,7 +64,6 @@ public class DataLoader implements CommandLineRunner {
         johnPet.setBirthDate(LocalDate.now());
         johnPet.setName("Summer");
         owner1.getPets().add(johnPet);
-
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -94,5 +92,11 @@ public class DataLoader implements CommandLineRunner {
         vet2.getSpecialities().add(savedSurgery);
         vetService.save(vet2);
         System.out.println("Loaded Vets...");
+
+        Visit dogVisit = new Visit();
+        dogVisit.setPet(johnPet);
+        dogVisit.setDate(LocalDate.now());
+        dogVisit.setDescription("Dog Visit");
+        visitService.save(dogVisit);
     }
 }
